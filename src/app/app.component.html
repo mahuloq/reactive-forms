@@ -1,8 +1,40 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <div formGroupName="userData">
+      <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Project Name</label>
+          <input
+            formControlName="projectName"
+            type="text"
+            id="name"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Mail</label>
+          <input
+            formControlName="email"
+            type="email"
+            id="email"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="status">Project Status</label>
+          <select
+            id="status"
+            formControlName="projectStatus"
+            class="form-control"
+          >
+            <option value="stable">Stable</option>
+            <option value="critical">Critical</option>
+            <option value="finished">Finished</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Create Porject</button>
+
+        <!-- <div formGroupName="userData">
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -70,7 +102,7 @@
         <span *ngIf="!signupForm.valid && signupForm.touched" class="help-block"
           >Please enter a valid data.</span
         >
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button> -->
       </form>
     </div>
   </div>
